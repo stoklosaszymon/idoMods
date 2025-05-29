@@ -489,6 +489,11 @@ header {
         position: absolute;
     }
 
+    .popup-image {
+        position: relative;
+        left: -54px;
+    }
+
     .baner {
         grid-column: span 2;
         grid-row: 2;

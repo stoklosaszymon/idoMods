@@ -133,6 +133,7 @@ function openPopup(product) {
 
     popup.appendChild(popupText);
     let productImage = createProductImage(product);
+    productImage.classList.add('popup-image');
     popup.appendChild(productImage);
     body.appendChild(popup);
 
@@ -157,7 +158,7 @@ function createPopupCloseButton() {
         closePopup();
     });
     let icon = document.createElement('img');
-    icon.src = 'CLOSE.svg';
+    icon.src = './assets/icons/CLOSE.svg';
     let text = document.createElement('span');
     text.innerText = 'Close';
 
