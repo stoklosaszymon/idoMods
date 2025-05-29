@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kup modne buty sportowe męskie w sklepie XYZ. Darmowa dostawa i 30 dni na zwrot.">
+    <meta name="robots" content="index, follow">
+    <title>Sportowa odzież zimowa – Kurtki, buty, akcesoria | Formasint.pl</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div class="header-container">
+        <header class="container">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <img id="forma-logo" src="assets/icons/forma-default.svg" />
+                    <span>Forma’sint.</span>
+                </a>
+                <div class="mobile-hidden">idomods &lt;/&gt;</div>
+            </div>
+
+            <nav>
+                <ul class="nav-links mobile-hidden">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#featured-section">Featured products</a></li>
+                    <li><a href="#products-section">Product listing</a></li>
+                </ul>
+            </nav>
+
+            <div class="role mobile-hidden">
+                <img src="assets/icons/icon_user.svg" />
+                <span>Frontend Developer</span>
+            </div>
+
+            <div class="mobile-hidden menu">
+                <div class="menu-button" onclick="openMobileMenu()">
+                    <img src="assets/icons/menu_hamburger.svg" />
+                    <span>Menu</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero container">
+            <img class="hero-logo" src="assets/icons/LOGO-FORMA.svg" />
+            <div class="hero-photo"></div>
+        </section>
+    </div>
+
+    <section id="featured-section" class="featured container">
+        <div>
+            <span>Featured products</span>
+            <h1>Browse featured</h1>
+        </div>
+        <div class="swiper">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+
+    <section id="products-section" class="container">
+        <div class="pagination">
+            <span>Number of products per page</span>
+            <div class="custom-select">
+                <div>
+                    <div class="choosen-select">
+                        <span id="selectedValue">14</span>
+                        <img src="assets/icons/chevron_down.svg" />
+                    </div>
+                </div>
+                <div onclick="selectValue(14)" class="custom-option option hidden">14</div>
+                <div class="underline option hidden"></div>
+                <div onclick="selectValue(28)" class="custom-option option hidden">28</div>
+                <div class="underline option hidden"></div>
+                <div onclick="selectValue(36)" class="custom-option option hidden">36</div>
+            </div>
+        </div>
+        <div id="productList" class="product-list">
+            <div class="baner">
+                <div class="baner-content">
+                    <div>
+                        <span>Forma’sint.</span>
+                        <h1>You'll look and feel like the champion.</h1>
+                    </div>
+                    <footer>
+                        <button class="baner-button">
+                            <span>CHECK THIS OUT</span>
+                            <img loading="lazy" src="assets/icons/chevron_right.svg" />
+                        </button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+    </footer>
+
+
+    <div id="popup-overlay" class="overlay show-overlay" onclick="openMobileMenu()"></div>
+    <div id="menu-mobile" class="menu menu-mobile active-menu menu-padding">
+        <div class="menu-mobile-top">
+            <a href="/" class="logo">
+                <img id="forma-logo" src="assets/icons/forma-default.svg" />
+            </a>
+            <div class="mobile-hidden menu">
+                <div class="menu-button " onclick="openMobileMenu()">
+                    <img src="assets/icons/menu_hamburger.svg" />
+                    <span>Close</span>
+                </div>
+            </div>
+        </div>
+        <ul class="nav-links mobile-navigation">
+            <li><a href="/">Home</a></li>
+            <li><a href="#featured-section" onclick="openMobileMenu()">Featured products</a></li>
+            <li><a href="#products-section" onclick="openMobileMenu()">Product listing</a></li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: isMobile ? 1 : 4,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            spaceBetween: 24,
+            pagination: {
+                el: '.swiper-pagination',
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
