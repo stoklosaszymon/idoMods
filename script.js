@@ -179,6 +179,15 @@ function createFavoriteIcon() {
     let img = document.createElement('img');
     img.src = './assets/icons/icon_fav.svg';
     img.classList.add('fav-icon');
+
+    const handleEvent = (event) => {
+        const src = event.target.getAttribute('src');
+        event.target.src = src == './assets/icons/icon_fav.svg' ? './assets/icons/icon_fav_fill.svg' : './assets/icons/icon_fav.svg';
+    }
+
+    ['mouseover', 'mouseleave'].forEach(eventType => {
+        img.addEventListener(eventType, handleEvent);
+    });
     return img;
 }
 
@@ -249,14 +258,6 @@ container.addEventListener("mouseover", (event) => {
 container.addEventListener("mouseleave", (event) => {
     icon.src = './assets/icons/forma-default.svg';
 });
-
-let favIcons = [...document.getElementsByClassName('fav-icon')];
-favIcons.forEach(icon => {
-    icon.addEventListener('click', (event) => {
-        const src = event.target.getAttribute('src');
-        event.target.src = src == './assets/icons/icon_fav.svg' ? './assets/icons/icon_fav_fill.svg' : './assets/icons/icon_fav.svg';
-    })
-})
 
 let customSelect = document.getElementsByClassName('custom-select')[0];
 customSelect.addEventListener('click', (event) => {
