@@ -221,13 +221,8 @@ function selectValue(value) {
     let sel = document.getElementById('selectedValue');
     sel.innerText = pageSize;
     pageNumber = 1;
-    console.log('pn', pageNumber);
-    console.log('ps', pageSize);
-    console.log('current', products.leangth);
     clearList();
-    console.log('cleared', products.length);
     fetchProducts();
-    console.log('fetched', products.length);
 }
 
 function clearList() {
